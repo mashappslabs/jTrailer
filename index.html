@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>Sample Title</title>
+</head>
+
+<body>
+
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jTrailer.js"></script>
+	<script type="text/javascript">
+		var feed = $.jTrailer("Kung-Fu Panda 2", 5, function (data) {
+			var trailers = data.entry;
+			$.each(trailers, function() {
+				$('<div />').html(this.content.$t).appendTo($('body'));
+			});
+		});
+	</script>	
+</body>
+</html>
