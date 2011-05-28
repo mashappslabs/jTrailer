@@ -13,6 +13,10 @@
 	<script type="text/javascript" src="js/jTrailer.js"></script>
 	<script type="text/javascript">
 		var feed = $.jTrailer("Kung-Fu Panda 2", 5, function (data) {
+			if (!data) {
+				alert("No trailer found for this movie");
+				return false;
+			}
 			var trailers = data.entry;
 			$.each(trailers, function() {
 				$('<div />').html(this.content.$t).appendTo($('body'));
